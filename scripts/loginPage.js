@@ -18,3 +18,6 @@ document.getElementById('forgotPassword').addEventListener('click', function (e)
     e.preventDefault();
     alert("Redirect to Forgot Password page (not implemented).");
 });
+function Redirect () {
+    window.location.href = "registerPage.html";
+}

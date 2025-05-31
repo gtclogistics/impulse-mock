@@ -7,7 +7,7 @@ function validateForm() {
 
     message.textContent = "";
 
-    // Disallow numbers in full name
+    // Name should contain only letters and spaces
     const namePattern = /^[A-Za-z\s]+$/;
     if (!namePattern.test(name)) {
         message.textContent = "Full name must contain only letters and spaces.";
@@ -25,5 +25,9 @@ function validateForm() {
     }
 
     alert("Registration successful!");
-    return true;
+
+    // Redirect to login page
+    window.location.href = "loginPage.html";
+
+    return false; // Prevent default form submit
 }

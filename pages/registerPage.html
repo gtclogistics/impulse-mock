@@ -10,7 +10,7 @@
 <div class="register-container">
     <h2>Register</h2>
     <form id="registerForm" onsubmit="return validateForm()">
-        <input type="text" id="name" placeholder="Full Name" required />
+        <input type="text" id="name" placeholder="Full Name" required pattern="[A-Za-z\s]+" />
         <input type="email" id="email" placeholder="Email Address" required />
         <input type="password" id="password" placeholder="Password" required />
         <input type="password" id="confirmPassword" placeholder="Confirm Password" required />

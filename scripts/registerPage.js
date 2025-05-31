@@ -7,6 +7,13 @@ function validateForm() {
 
     message.textContent = "";
 
+    // Disallow numbers in full name
+    const namePattern = /^[A-Za-z\s]+$/;
+    if (!namePattern.test(name)) {
+        message.textContent = "Full name must contain only letters and spaces.";
+        return false;
+    }
+
     if (password !== confirmPassword) {
         message.textContent = "Passwords do not match.";
         return false;

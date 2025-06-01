@@ -65,6 +65,7 @@ input {
     border: 2px solid var(--input-text);
     border-radius: 4px;
     height: 32px;
+    transition: border 0.2s ease;
 }
 
 input::placeholder {
@@ -73,11 +74,14 @@ input::placeholder {
 
 input:focus {
     outline: none;
-    border: 3px solid var(--input-text);
+    border: 3px solid black;
 }
 
-#name:focus {
-    border-width: 3px;
+#name:focus,
+#email:focus,
+#password:focus,
+#confirmPassword:focus {
+    border: 3px solid black;
 }
 
 /* 👁️ Eye toggle button inside password input field */

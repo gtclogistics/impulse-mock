@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impulse Welcome Page</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <p>Welcome to Impulse! Redirecting to login...</p>
+</div>
+<script>
+    // Generate random number between 1 and 5 for delay in seconds
+    const n = Math.floor(Math.random() * 5) + 1;
+    // Redirect to login.html after n seconds
+    setTimeout(() => {
+        window.location.href = 'login.html';
+    }, n * 1000);
+</script>
+</body>
+</html>

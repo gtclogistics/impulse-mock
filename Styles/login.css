@@ -12,7 +12,7 @@ body {
 
 .login-container {
     width: 90%;
-    max-width: 400px;
+    max-width: 350px;
     padding: 20px;
     box-sizing: border-box;
 }
@@ -145,3 +145,38 @@ html[dir="rtl"] input,
 html[dir="rtl"] .secondary-link {
     text-align: right;
 }
+.eye-btn {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    padding: 8px;
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.eye-btn span {
+    font-size: 18px;
+    pointer-events: none;
+}
+.form-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-row label {
+    width: 60px;
+    text-align: right;
+}
+
+.form-row input {
+    flex: 1;
+    min-height: 44px;
+    padding: 10px;
+    font-size: 1em;
+}
+

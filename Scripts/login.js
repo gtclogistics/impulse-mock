@@ -7,9 +7,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const passwordError = document.getElementById("passwordError");
 
     togglePasswordBtn.addEventListener("click", () => {
-        const isHidden = passwordInput.type === "password";
-        passwordInput.type = isHidden ? "text" : "password";
-        togglePasswordBtn.textContent = isHidden ? "🙈" : "👁️";
+        togglePasswordBtn.addEventListener("click", () => {
+            const isHidden = passwordInput.type === "password";
+            passwordInput.type = isHidden ? "text" : "password";
+
+            // Update the eye icon
+            const eyeIcon = document.getElementById("eyeIcon");
+            eyeIcon.textContent = isHidden ? "👁️" : "👁️‍🗨️";  // Visible: eye only, Hidden: eye with slash
+        });
+
     });
 
     form.addEventListener("submit", function (e) {

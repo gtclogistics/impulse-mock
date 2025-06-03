@@ -52,20 +52,19 @@ label {
     display: block;
     margin-bottom: 4px;
     text-align: center;
-    font-size: 0.8rem;
+    font-size: clamp(14px, 2vw, 16px);
 }
 
 input {
     width: 95%;
     margin: 0 auto;
     padding: 6px;
-    font-size: 0.8rem;
+    font-size: clamp(14px, 2vw, 16px);
     background: var(--input-bg);
     color: var(--input-text);
     border: 2px solid var(--input-text);
     border-radius: 4px;
     height: 32px;
-    transition: border 0.2s ease;
 }
 
 input::placeholder {
@@ -74,17 +73,9 @@ input::placeholder {
 
 input:focus {
     outline: none;
-    border: 3px solid black;
+    border: 3px solid #000;
 }
 
-#name:focus,
-#email:focus,
-#password:focus,
-#confirmPassword:focus {
-    border: 3px solid black;
-}
-
-/* 👁️ Eye toggle button inside password input field */
 .password-toggle-img {
     position: absolute;
     top: 50%;
@@ -95,6 +86,21 @@ input:focus {
     cursor: pointer;
     opacity: 0.75;
     z-index: 1;
+}
+
+.inline-error {
+    font-size: 0.75em;
+    color: white;
+    position: absolute;
+    left: 6px;
+    bottom: -16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.inline-error.show {
+    opacity: 1;
+    color: white;
 }
 
 #registerBtn {
@@ -112,7 +118,6 @@ input:focus {
     display: block;
 }
 
-/* 🔄 Invert colors on hover/tap */
 #registerBtn:hover,
 #registerBtn:focus,
 #registerBtn:active {
@@ -129,7 +134,6 @@ input:focus {
     margin-top: 8px;
     text-align: center;
     font-size: 0.8rem;
-    font-style: italic;
 }
 
 .login-link a {
@@ -140,7 +144,7 @@ input:focus {
 .login-link a:hover,
 .login-link a:focus {
     text-decoration: underline;
-    color: #00f;
+    color: #fff;
 }
 
 .error-container {

@@ -1,0 +1,186 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login-container {
+    width: 90%;
+    max-width: 350px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.welcome-text {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="email"],
+input[type="password"] {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 1em;
+    min-height: 44px;
+}
+
+input::placeholder {
+    color: gray;
+}
+
+.password-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    flex: 1;
+}
+
+.password-wrapper button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 1.2em;
+    color: white;
+}
+
+button[type="submit"] {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.2s ease, color 0.2s ease;
+    min-height: 44px;
+}
+
+
+button[type="submit"]:hover,
+button[type="submit"]:active {
+    background-color: black;
+    color: white;
+}
+
+
+.error-message {
+    color: white;
+    border: 1px solid red;
+    padding: 5px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.error-message.show {
+    display: block;
+    opacity: 1;
+}
+
+.links {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.secondary-link {
+    color: white;
+    font-style: italic;
+    font-size: 0.9em;
+    display: block;
+    margin-top: 5px;
+    text-decoration: underline;
+}
+
+/* Responsive Layout */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .login-container {
+        width: 50%;
+        max-width: 500px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .login-container {
+        width: 30%;
+        max-width: 400px;
+    }
+}
+
+/* Font Sizes */
+@media (max-width: 600px) {
+    body { font-size: 14px; }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    body { font-size: 15px; }
+}
+
+@media (min-width: 1025px) {
+    body { font-size: 16px; }
+}
+
+/* RTL Support */
+html[dir="rtl"] {
+    direction: rtl;
+}
+
+html[dir="rtl"] label,
+html[dir="rtl"] input,
+html[dir="rtl"] .secondary-link {
+    text-align: right;
+}
+.eye-btn {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    padding: 8px;
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.eye-btn span {
+    font-size: 18px;
+    pointer-events: none;
+}
+.form-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-row label {
+    width: 60px;
+    text-align: right;
+}
+
+.form-row input {
+    flex: 1;
+    min-height: 44px;
+    padding: 10px;
+    font-size: 1em;
+}
+

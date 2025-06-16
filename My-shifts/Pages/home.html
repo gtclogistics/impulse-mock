@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Driver Home</title>
+  <link rel="stylesheet" href="../Styles/home.css" />
+</head>
+<body>
+
+<!-- Dashboard Toggle Button -->
+<button class="dashboard-toggle">☰</button>
+
+<!-- Sidebar Dashboard -->
+<div id="dashboard" class="dashboard hidden">
+  <img src="https://pbs.twimg.com/media/GL7EezIa4AAyKy-.jpg" alt="GTC Logo" class="gtc-logo" />
+  <button class="dashboard-btn" onclick="goHome()">🏠 Home</button>
+  <button class="dashboard-btn" onclick="goToSettings()">⚙️ Settings</button>
+  <button class="dashboard-btn" onclick="goToProfile()">👤 Profile</button>
+  <button class="dashboard-btn" onclick="goToAbout()">ℹ️ About</button>
+</div>
+
+<!-- Black Header with Notifications -->
+<div class="header">
+  <div class="header-right">
+    <button class="bell-icon" onclick="toggleNotifications()">🔔</button>
+    <div id="notification-box" class="notification-box hidden">
+      <ul>
+        <li>New route assigned for today</li>
+        <li>Reminder: Shift at 9 AM</li>
+        <li>Your Friday leave was approved</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Centered Grid Home Buttons -->
+<main class="grid-container">
+  <div class="grid-item" onclick="navigateTo('../Pages/my-shifts.html')">
+    <h2>My Shifts</h2>
+  </div>
+  <div class="grid-item" onclick="navigateTo('delivery.html')">
+    <h2>Delivery</h2>
+  </div>
+  <div class="grid-item" onclick="navigateTo('packages.html')">
+    <h2>Packages</h2>
+  </div>
+  <div class="grid-item" onclick="navigateTo('payroll.html')">
+    <h2>Payroll</h2>
+  </div>
+</main>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const dashboard = document.getElementById("dashboard");
+    const toggleBtn = document.querySelector(".dashboard-toggle");
+    const notificationBox = document.getElementById("notification-box");
+
+    // Navigation functions
+    window.goHome = () => window.location.href = "/home";
+    window.goToSettings = () => window.location.href = "/settings";
+    window.goToProfile = () => window.location.href = "/profile";
+    window.goToAbout = () => window.location.href = "/about";
+    window.navigateTo = (page) => window.location.href = page;
+
+    // Toggle notification dropdown
+    window.toggleNotifications = () => {
+      if (notificationBox) notificationBox.classList.toggle("hidden");
+    };
+
+    // Show/hide sidebar dashboard
+    function toggleDashboard() {
+      dashboard.classList.toggle("show");
+      dashboard.classList.remove("hidden");
+    }
+
+    toggleBtn.addEventListener("click", (e) => {
+      e.stopPropagation(); // prevent immediate close
+      toggleDashboard();
+    });
+
+    // Close dashboard when clicking outside
+    document.addEventListener("click", (event) => {
+      if (
+              dashboard.classList.contains("show") &&
+              !dashboard.contains(event.target) &&
+              !toggleBtn.contains(event.target)
+      ) {
+        dashboard.classList.remove("show");
+        dashboard.classList.add("hidden");
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

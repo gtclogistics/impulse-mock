@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register</title>
+  <link rel="stylesheet" href="../styles/register.css" />
+  <noscript><style>.no-js { display: block; }</style></noscript>
+</head>
+<body>
+<main>
+  <section class="register-card" aria-labelledby="form-title">
+    <h1 id="form-title">Create Your Impulse Account</h1>
+
+    <!-- 👇 Message for users with JavaScript disabled -->
+    <noscript>
+      <div class="error-container no-js">JavaScript required</div>
+    </noscript>
+
+    <form id="registerForm" novalidate>
+
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="John Doe" required autofocus />
+        <span class="inline-error fade" id="nameError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        <span class="inline-error fade" id="emailError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div style="position: relative;">
+          <input type="password" id="password" name="password" placeholder="Enter password" required />
+          <img
+                  src="https://img.icons8.com/ios-filled/24/closed-eye.png"
+                  id="togglePassword"
+                  class="password-toggle-img"
+                  alt="Toggle password visibility"
+          />
+        </div>
+        <span class="inline-error fade" id="passwordError"></span>
+        <p id="strength" class="strength-text">Strength: </p>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <div style="position: relative;">
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required />
+          <img
+                  src="https://img.icons8.com/ios-filled/24/closed-eye.png"
+                  id="toggleConfirmPassword"
+                  class="password-toggle-img"
+                  alt="Toggle confirm password visibility"
+          />
+        </div>
+        <span class="inline-error fade" id="confirmPasswordError"></span>
+      </div>
+
+      <button type="submit" id="registerBtn">Register</button>
+
+      <p class="login-link">
+        Already have an account? <a href="login.html">Login</a>
+      </p>
+
+      <div id="errorMessages" class="error-container" aria-live="polite"></div>
+
+    </form>
+  </section>
+</main>
+<script src="../scripts/register.js"></script>
+</body>
+</html>

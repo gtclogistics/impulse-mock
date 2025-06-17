@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shift Details</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 1rem;
+      background: #f2f2f2;
+    }
+
+    .back-button {
+      display: inline-block;
+      background: black;
+      color: white;
+      padding: 10px 16px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      transition: transform 0.2s ease;
+    }
+
+    .back-button:hover,
+    .back-button:active {
+      transform: scale(0.95);
+    }
+
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: auto;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .btn {
+      margin-top: 1rem;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: black;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover,
+    .btn:active {
+      transform: scale(0.95);
+    }
+
+    .btn:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    .info {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    #shift-timer {
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<a href="#" id="back-button" class="back-button">← Back</a>
+
+<div class="card">
+  <h2>Shift Details</h2>
+  <p id="shift-date"></p>
+  <div class="info" id="shift-info"></div>
+  <button class="btn" id="start-btn" disabled>Start Shift</button>
+  <button class="btn" id="end-btn" disabled>End Shift</button>
+  <div id="shift-timer"></div>
+</div>
+
+<script src="../scripts/shift-details.js"></script>
+
+</body>
+</html>
